@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1">
+        Box one content
+    </div>
+
+    <div id="box2">
+        Box two content
+    </div>
+
+    <div id="box">
+        An element
+    </div>
+    <script>
+        document.querySelector("#box1").textContent = "Hello <b>DOM</b>"
+        document.querySelector("#box2").innerHTML = "Hello <b>DOM</b>"
+        let hello = document.createTextNode("Hello DOM.")
+        document.querySelector("#box").appendChild(hello)
+        hello = document.createElement("b")
+        hello.textContent = "New!"
+        let div = document.querySelectorAll("div")
+        
+        var div_array = [...div]
+        div_array.forEach(div => div.insertBefore(hello,div.firstChild))
+    </script>
+</body>
+</html>
